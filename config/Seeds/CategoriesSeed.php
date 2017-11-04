@@ -2,7 +2,6 @@
 use Migrations\AbstractSeed;
 use Cake\I18n\FrozenTime;
 
-
 /**
  * Categories seed.
  */

@@ -40,6 +40,5 @@ class MoniesTable extends Table
         $validator
             ->integer('category_id')
             ->allowEmpty('category_id', 'create');
-
     }
 }
