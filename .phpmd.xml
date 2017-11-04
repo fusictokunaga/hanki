@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset>
+    <rule ref="rulesets/codesize.xml">
+    </rule>
+
+    <rule ref="rulesets/design.xml">
+        <exclude name="NumberOfChildren" />
+    </rule>
+
+    <rule ref="rulesets/naming.xml">
+        <exclude name="ShortVariable" />
+    </rule>
+
+    <rule ref="rulesets/unusedcode.xml">
+        <exclude name="UnusedFormalParameter" />
+    </rule>
+</ruleset>
