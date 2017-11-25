@@ -1,0 +1,13 @@
+/**コンテンツ**/
+div#content{
+    margin: 40px 0 0 20px;
+}
+
+/**サイドメニュー**/
+div#sidenav{
+    height: 100vh;
+}
+
+div#sidenav-maintitle{
+    margin: 40px 0 20px 0;
+}
