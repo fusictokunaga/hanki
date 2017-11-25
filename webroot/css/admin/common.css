@@ -11,3 +11,13 @@ div#sidenav{
 div#sidenav-maintitle{
     margin: 40px 0 20px 0;
 }
+
+/*ボタン*/
+/*ボタンの大きさ*/
+.common-button{
+    margin: 20px;
+}
+
+#common-button{
+    text-align: center;
+}

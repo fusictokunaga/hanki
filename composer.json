@@ -12,7 +12,8 @@
         "cakephp/plugin-installer": "~1.0",
         "josegonzalez/dotenv": "2.*",
         "fabpot/php-cs-fixer": "^2.8",
-        "phpmd/phpmd": "^2.6"
+        "phpmd/phpmd": "^2.6",
+        "satthi/contents-file": "*"
     },
     "require-dev": {
         "psy/psysh": "@stable",
