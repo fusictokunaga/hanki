@@ -35,6 +35,8 @@ class BooksTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('ContentsFile.ContentsFile');
+        $this->addBehavior('Timestamp');
+
     }
 
     /**
@@ -60,6 +62,32 @@ class BooksTable extends Table
 
         $validator
             ->allowEmpty('point');
+
+        // providerを読み込み
+        $validator->setProvider('contents_file', 'ContentsFile\Validation\ContentsFileValidation');
+        $validator
+            ->notEmpty('img', 'ファイルを添付してください' , function ($context){
+                // fileValidationWhenメソッドを追加しました。
+                return $this->fileValidationWhen($context, 'img');
+            })
+            ->add('img', 'uploadMaxSizeCheck', [
+                'rule' => 'uploadMaxSizeCheck',
+                'provider' => 'contents_file',
+                'message' => 'ファイルアップロード容量オーバーです',
+                'last' => true,
+            ])
+            ->add('img', 'checkMaxSize', [
+                'rule' => ['checkMaxSize' , '1M'],
+                'provider' => 'contents_file',
+                'message' => 'ファイルアップロード容量オーバーです',
+                'last' => true,
+            ])
+            ->add('img', 'extension', [
+                'rule' => ['extension', ['jpg', 'jpeg', 'gif', 'png',]],
+                'message' => '画像のみを添付して下さい',
+                'last' => true,
+            ]);
+
 
         return $validator;
     }

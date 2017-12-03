@@ -1,5 +1,6 @@
 <?php
 use Migrations\AbstractMigration;
+
 class AttachmentsAdd extends AbstractMigration
 {
     public function up()

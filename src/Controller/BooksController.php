@@ -24,8 +24,12 @@ class BooksController extends AppController
     public function add()
     {
         $book = $this->Books->newEntity();
+
+
         if ($this->request->is('post')) {
             $book = $this->Books->patchEntity($book, $this->request->getData());
+
+
             if ($this->Books->save($book)) {
                 $this->Flash->success('登録しました');
                 return $this->redirect(['action' => 'index']);
