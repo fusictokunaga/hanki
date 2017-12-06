@@ -67,7 +67,7 @@
 
 <script type="text/javascript">
 $(function() {
-    $('#star').raty( {
+    $('div#star').raty( {
         readOnly: true,   //閲覧者によるスコアの変更不可
         score: function() {
             return $(this).attr('data-score');

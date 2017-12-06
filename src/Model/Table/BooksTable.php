@@ -36,7 +36,6 @@ class BooksTable extends Table
 
         $this->addBehavior('ContentsFile.ContentsFile');
         $this->addBehavior('Timestamp');
-
     }
 
     /**
@@ -66,7 +65,7 @@ class BooksTable extends Table
         // providerを読み込み
         $validator->setProvider('contents_file', 'ContentsFile\Validation\ContentsFileValidation');
         $validator
-            ->notEmpty('img', 'ファイルを添付してください' , function ($context){
+            ->notEmpty('img', 'ファイルを添付してください', function ($context) {
                 // fileValidationWhenメソッドを追加しました。
                 return $this->fileValidationWhen($context, 'img');
             })
