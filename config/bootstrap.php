@@ -215,3 +215,17 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+
+Plugin::load('ContentsFile', ['routes' => true]);
+Configure::write('ContentsFile.Setting', [
+    'type' => 'normal',
+    // trueでファイル名がランダム文字列に
+    'randomFile' => false,
+    // trueで拡張子付きでファイルを保存する。loaderを通さずに使用する場合は設定しておいたほうが良い。
+    'ext' => false,
+    'Normal' => [
+        'tmpDir' => TMP . 'cache/files/',
+        'fileDir' => ROOT . '/files/',
+    ],
+]);

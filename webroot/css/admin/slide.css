@@ -1,0 +1,22 @@
+/**スライドしょー**/
+div#slide-show{
+    margin: 0 auto;
+    padding: 40px;
+    width: 80%;
+    color: black;
+    background: whitesmoke;
+}
+
+div#slide-single-item{
+    text-align: center;
+    color: black;
+    background: white;
+}
+
+img.slide-image{
+    margin: 0 auto;
+}
+
+button.slick-arrow::before{
+    color: black;
+}
